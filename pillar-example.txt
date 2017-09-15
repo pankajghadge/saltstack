@@ -1,0 +1,25 @@
+s3cmd:
+  config:
+    home_path: /root
+    user: root
+    access_key: XXXXXXXXXXXXXXXXXXXXX
+    bucket_location: EU
+    gpg_passphrase: company@itrunonline
+    secret_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  backup:
+    - source: /data/backups/ppd/project/mysql/
+      destination: s3://bucketname.example.com/backups/ppd/mysql/
+      delete: True
+      cron_present: True
+      cron_identifier: 'Unique cron identifier:- Daily S3 Backup at 1:00 am'
+      cron_user: root
+      cron_hour: 1
+      cron_minute: 0
+    - source: /data/backups/ppd/project/mysql/
+      destination: s3://bucketname.example.com/backups/ppd/mysql/
+      delete: True
+      cron_present: True
+      cron_identifier: 'Unique cron identifier:- Daily S3 Backup at 2:30 am'
+      cron_user: root
+      cron_hour: 2
+      cron_minute: 30

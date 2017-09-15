@@ -1,0 +1,32 @@
+## Need to give the permission s3:ListAllMyBuckets to aws_user_name user because s3cmd needs it.
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Statement1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "aws:username": "aws_user_name"
+                }
+            },
+            "Resource": [
+                "arn:aws:s3:::example.s3bucket.com",
+                "arn:aws:s3:::example.s3bucket.com/*"
+            ]
+        },
+        {
+            "Sid": "Statement2",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListAllMyBuckets"
+            ],
+            "Resource": [
+                "arn:aws:s3:::"
+            ]
+        }
+    ]
+}
