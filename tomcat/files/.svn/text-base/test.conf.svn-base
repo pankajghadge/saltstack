@@ -1,0 +1,2 @@
+{{ test_array }}
+{{ grains.get('saltversion') }}

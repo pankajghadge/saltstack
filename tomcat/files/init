@@ -1,0 +1,41 @@
+# chkconfig: 345 99 01
+# description: tomcat daemon
+
+#!!!!!!!!!  This file is managed by SALT   !!!!!!!!!!!!
+#!!!!!!!!!     DO NOT EDIT MANUALLY !      !!!!!!!!!!!!
+
+export JAVA_HOME=/usr/local/java/latest
+export CATALINA_OPTS="{% for opt in salt['pillar.get']('tomcat:catalina_opts', []) %}-{{ opt }} {% endfor %}"
+export JAVA_OPTS="{% for opt in salt['pillar.get']('tomcat:java_opts', []) %}-{{ opt }} {% endfor %}"
+
+case $1 in
+        start)
+        sh {{ install_path }}/latest/bin/startup.sh
+        sleep 1m
+        ;;
+
+        stop)
+        sh {{ install_path }}/latest/bin/shutdown.sh
+        ;;
+
+        restart)
+        sh {{ install_path }}/latest/bin/shutdown.sh
+        sleep 10
+        killall -9 java 2>&1 > /dev/null
+        sh {{ install_path }}/latest/bin/startup.sh
+        sleep 60
+        ;;
+
+        status)
+	if netstat -ln | grep -q 8080; then
+                echo "Tomcat is running"
+                exit 0
+        else
+                echo "Tomcat is not running !"
+                exit 1
+        fi
+        ;;
+
+esac
+exit 0
+

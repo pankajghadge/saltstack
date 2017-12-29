@@ -1,0 +1,34 @@
+# Used by tomcat state for deploying WARs
+tomcat-manager.user: admin 
+tomcat-manager.passwd: admin_pass
+tomcat-gui-manager.user: admin
+tomcat-gui-manager.passwd: admin_pass
+
+java:
+  version:
+    long: 1.8.0_112
+    short: 8u112
+
+tomcat:
+  version: 7.0.54
+  base_version: 7
+  install_path: '/data/usr/local/tomcat'
+  catalina_opts:
+    - Djava.net.preferIPv4Stack=true
+    - Xms4096m
+    - Xmx6096m
+    - XX:PermSize=512m
+    - XX:MaxPermSize=1024m
+    - XX:+UseParNewGC
+    - XX:+UseConcMarkSweepGC
+    - XX:+CMSClassUnloadingEnabled
+    - XX:+CMSPermGenSweepingEnabled
+    - XX:+HeapDumpOnOutOfMemoryError
+    - XX:HeapDumpPath=/data
+    - Duser.timezone=Europe/Paris
+    - Djava.rmi.server.hostname={{ grains['ip_interfaces']['eth0'][0] }}
+    - Dcom.sun.management.jmxremote
+    - Dcom.sun.management.jmxremote.ssl=false
+    - Dcom.sun.management.jmxremote.authenticate=false
+    - Dcom.sun.management.jmxremote.port=6969
+    - Dcom.sun.management.jmxremote.rmi.port=6969

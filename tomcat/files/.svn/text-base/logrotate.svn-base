@@ -1,0 +1,38 @@
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!  This file is managed by SALT   !!!!!!!!!!!!
+#!!!!!!!!!     DO NOT EDIT MANUALLY !      !!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+/usr/local/tomcat/latest/logs/*.log
+{
+	copytruncate
+	daily
+	rotate 7
+	compress
+	missingok
+#	size 5M
+}
+
+
+/usr/local/tomcat/latest/logs/*.txt
+{
+	copytruncate
+	daily
+	rotate 7
+	compress
+	missingok
+#	size 5M
+}
+
+/usr/local/tomcat/latest/logs/catalina.out
+{
+	copytruncate
+	daily
+	rotate 7
+	compress
+	missingok
+#	size 5M
+}

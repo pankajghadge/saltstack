@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!--
+!!!!!!!!!  This file is managed by SALT   !!!!!!!!!!!!
+!!!!!!!!!     DO NOT EDIT MANUALLY !      !!!!!!!!!!!!
+-->
+
+<tomcat-users>
+
+	<role rolename="manager-script"/>
+	<user username="{{ salt['pillar.get']('tomcat-manager.user', 'admin') }}" password="{{ salt['pillar.get']('tomcat-manager.passwd', 'admin') }}" roles="manager-script"/>
+
+	<role rolename="manager-gui"/>
+	<user username="{{ salt['pillar.get']('tomcat-gui-manager.user', 'admin') }}" password="{{ salt['pillar.get']('tomcat-gui-manager.passwd', 'admin') }}" roles="manager-gui"/>
+
+</tomcat-users>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/ITCloudSalt/!svn/ver/3908/states/ppd/base/tomcat/files
+END
+tomcat-users.xml.j2
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/ITCloudSalt/!svn/ver/2059/states/ppd/base/tomcat/files/tomcat-users.xml.j2
+END
+logrotate
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ITCloudSalt/!svn/ver/2059/states/ppd/base/tomcat/files/logrotate
+END
+init
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/ITCloudSalt/!svn/ver/3871/states/ppd/base/tomcat/files/init
+END
+test.conf
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ITCloudSalt/!svn/ver/3908/states/ppd/base/tomcat/files/test.conf
+END
+sysconfig
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ITCloudSalt/!svn/ver/2059/states/ppd/base/tomcat/files/sysconfig
+END
+tomcat.service
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/ITCloudSalt/!svn/ver/3871/states/ppd/base/tomcat/files/tomcat.service
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ITCloudSalt/!svn/ver/2059/states/ppd/base/tomcat/files/web.xml
+END

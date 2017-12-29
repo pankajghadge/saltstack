@@ -1,0 +1,24 @@
+#jinja file for testing
+
+{% set lookup_table = {
+      "CentOS": {
+        6: {
+          "service_watch_file": "/etc/init.d/tomcat",
+          "init_file_src": "salt://base/tomcat/files/init"
+          },
+        7: {
+          "service_watch_file": "/etc/systemd/system/tomcat.service",
+          "init_file_src": "salt://base/tomcat/files/tomcat.service"
+        }
+      }
+} %}
+
+{% set os_map = lookup_table.get(grains.os, {}) %}
+
+{% if grains.get('saltversion').startswith('2016') or grains.get('saltversion').startswith('2015') %}
+{% set osrelease = salt['grains.get']('osmajorrelease') | int %}
+{% else %}
+{% set osrelease = salt['grains.get']('osmajorrelease') %}
+{% endif %}
+
+{% set os_rel_map = os_map.get(osrelease, {}) %}

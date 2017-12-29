@@ -1,0 +1,12 @@
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!  This file is managed by SALT   !!!!!!!!!!!!
+#!!!!!!!!!     DO NOT EDIT MANUALLY !      !!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+export JAVA_HOME=/usr/local/java/latest
+export CATALINA_OPTS="{% for opt in salt['pillar.get']('tomcat:catalina_opts', []) %}-{{ opt }} {% endfor %}"
+export JAVA_OPTS="{% for opt in salt['pillar.get']('tomcat:java_opts', []) %}-{{ opt }} {% endfor %}"
+
+
