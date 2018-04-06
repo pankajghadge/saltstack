@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/ITCloudSalt/!svn/ver/6407/states/ppd/base/mariadb/latest
+END
+logrotate.sls
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/ITCloudSalt/!svn/ver/6407/states/ppd/base/mariadb/latest/logrotate.sls
+END
+init.sls
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ITCloudSalt/!svn/ver/6407/states/ppd/base/mariadb/latest/init.sls
+END
+mariadb_repo.sls
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/ITCloudSalt/!svn/ver/6407/states/ppd/base/mariadb/latest/mariadb_repo.sls
+END
+repo.sls
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ITCloudSalt/!svn/ver/6407/states/ppd/base/mariadb/latest/repo.sls
+END
+map.jinja
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/ITCloudSalt/!svn/ver/6407/states/ppd/base/mariadb/latest/map.jinja
+END
+client.sls
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ITCloudSalt/!svn/ver/6407/states/ppd/base/mariadb/latest/client.sls
+END

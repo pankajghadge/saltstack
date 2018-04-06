@@ -1,0 +1,24 @@
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!  This file is managed by SALT   !!!!!!!!!!!!
+#!!!!!!!!!     DO NOT EDIT MANUALLY !      !!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Template: {{ source }}
+[mysql]
+
+# CLIENT #
+port                           = 3306
+
+[mysqld]
+
+{%- for name, section in server_config.items() %}
+[{{ name }}]
+{%- for key, value in section.items() %}
+{{ key }} = {{ value }}
+{%- endfor %}
+{%- endfor %}
+
+[embedded]
+
+[mariadb]

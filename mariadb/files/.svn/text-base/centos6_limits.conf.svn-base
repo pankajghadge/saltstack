@@ -1,0 +1,3 @@
+{% set nofile = salt['pillar.get']('mariadb:server:nofile', '65535') %}
+mysql           hard    nofile          {{ nofile }}
+mysql           soft    nofile          {{ nofile }}

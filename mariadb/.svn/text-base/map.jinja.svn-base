@@ -1,0 +1,54 @@
+{% set current_path = sls.split('.')[:-1] | join('/') %}
+
+
+#jinja file for testing
+
+{% set lookup_table = {
+      "CentOS": {
+        6: {
+          "baseurlend": "centos6-amd64",
+          "limit_conf_file_name": "/etc/security/limits.d/mysql.conf",
+          "limit_conf_file": "salt://base/mariadb/10_1/files/centos6_limits.conf",
+          "mariadb_server": "MariaDB-server",
+          "mariadb_service": "mysql",
+          "mariadb_client": "MariaDB-client"
+          },
+        7: {
+          "baseurlend": "centos7-amd64",
+          "limit_conf_file_name": "/etc/systemd/system/mariadb.service.d/limits.conf",
+          "limit_conf_file": "salt://base/mariadb/10_1/files/centos7_limits.conf",
+          "mariadb_server": "MariaDB-server",
+          "mariadb_service": "mysql",
+          "mariadb_client": "MariaDB-client"
+        }
+      },
+      "RedHat": {
+        6: {
+          "baseurlend": "rhel6-amd64",
+          "limit_conf_file_name": "/etc/security/limits.d/mysql.conf",
+          "limit_conf_file": "salt://base/mariadb/10_1/files/centos6_limits.conf",
+          "mariadb_server": "MariaDB-server",
+          "mariadb_service": "mysql",
+          "mariadb_client": "MariaDB-client"
+        },
+        7: {
+          "baseurlend": "rhel7-amd64",
+          "limit_conf_file_name": "/etc/systemd/system/mariadb.service.d/limits.conf",
+          "limit_conf_file": "salt://base/mariadb/10_1/files/centos7_limits.conf",
+          "mariadb_server": "MariaDB-server",
+          "mariadb_service": "mysql",
+          "mariadb_client": "MariaDB-client"
+        },
+      },
+} %}
+
+{% set os_map = lookup_table.get(grains.os, {}) %}
+
+{% if grains.get('saltversion').startswith('2016') or grains.get('saltversion').startswith('2015') %}
+{% set osrelease = salt['grains.get']('osmajorrelease') | int %}
+{% else %}
+{% set osrelease = salt['grains.get']('osmajorrelease') %}
+{% endif %}
+
+{% set os_rel_map = os_map.get(osrelease, {}) %}
+

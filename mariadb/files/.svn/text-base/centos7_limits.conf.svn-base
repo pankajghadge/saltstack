@@ -1,0 +1,5 @@
+{% set nofile = salt['pillar.get']('mariadb:server:nofile', '65535') %}
+{% set noproc = salt['pillar.get']('mariadb:server:noproc', '65535') %}
+[Service]
+LimitNOFILE={{ nofile }}
+LimitNPROC={{ noproc }}

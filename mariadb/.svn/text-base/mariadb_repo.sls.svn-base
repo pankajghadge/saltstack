@@ -1,0 +1,8 @@
+#Repo for mariaDB
+{% from "base/mariadb/latest/map.jinja" import os_rel_map with context %}
+mariadb_repo:
+  pkgrepo.managed:
+    - humanname: MariaDB 10.1
+    - baseurl: {{ os_rel_map.baseurl }}
+    - gpgcheck: 1
+    - gpgkey: https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
