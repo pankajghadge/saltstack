@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 SaltStack formula and code for cedexis
-Written by: Pankaj.GHADGE@3ds.com
+Written by: ghadge.pankaj@gmail.com
 Calling cedexis API for purging data on CDN
 Installation:
   1. Copy state cedexis.py file under _state folder
