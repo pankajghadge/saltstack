@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 Written by: ghadge.pankaj@gmail.com
-Calling cedexis API for purging data on CDN
+Calling Akamai API for purging data on CDN
 '''
 
 # Import python libs
